@@ -1,0 +1,6 @@
+# Notizen zur Unfallstatistik 2016
+
+Eintrag Kanalstraße, 258 (Zeile 3137 csv und xlsx) hat "0,5791666667" als Uhrzeit (sonst zb "10:50")
+
+
+#
