@@ -39,6 +39,8 @@ radbetg <- data.frame(radbet, X01g, X02g)
 # Kreuztabelle Verursacher Unfälle mit Radbeteiligung
 # Zeile: 01, Spalte: 02
 table(radbetg$X01g, radbetg$X02g, useNA = "always")
+prop.table(table(radbetg$X01g)) # enthält auch die Alleinunfälle
+prop.table(table(radbetg$X01g[!is.na(radbetg$X02g)]))
 
 # KFZ vs. Rad
 KFZvsRad <- subset(vums2016g, (X01g == "KFZ" & X02g == "Rad") | (X01g == "Rad" & X02g == "KFZ"))
@@ -46,6 +48,12 @@ dim(KFZvsRad) # 707 Unfälle zwischen Rad und KFZ
 prop.table(table(KFZvsRad$X01g)) # Bei 62.5% dieser Unfälle ist der KFZ-Fahrer Hauptverursacher
 
 table(KFZvsRad$X01g, KFZvsRad$X02g)
+
+# KFZ vs all
+KFZvsall <- subset(vums2016g, (X01g == "KFZ") | (X02g == "KFZ"))
+dim(KFZvsall) # 10137 Unfälle mit KFZ-Beteiligung
+table(KFZvsall$X01g, KFZvsall$X02g)
+prop.table(table(KFZvsall$X01g)) # Bei 87.6% dieser Unfälle ist ein KFZ-Fahrer Hauptverursacher
 
 
 #  
