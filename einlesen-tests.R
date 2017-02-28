@@ -1,3 +1,8 @@
+# libraries
+library(ggplot2)
+library(reshape2)
+library(gridExtra)
+
 # einlesen
 vums2016 <- read.csv("VU PP 2016-varnamen.csv", header = TRUE)
 

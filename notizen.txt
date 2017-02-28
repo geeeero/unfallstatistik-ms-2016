@@ -2,5 +2,16 @@
 
 Eintrag Kanalstraße, 258 (Zeile 3137 csv und xlsx) hat "0,5791666667" als Uhrzeit (sonst zb "10:50")
 
+------------------------------------
+
+Verkehrsbeteiligungscodes, die nicht im Aufschlüsselungs-PDF auftauchen (wie oft):
+25 (60), 73 (5), 82 (2), 89 (7), 201 (1), 221 (5) 
+
+* 25er haben alle Kennzeichen -> wohl auch PKW-artig
+* 4 von 5 der 73er haben eine Angabe in der Spalte Helm -> sind wohl Radfahrer
+* Die insges. 9 82er und 89er werden in den Spalten "Art der Verkehrsbeteiligung" teils als Fußgänger, teils als Sonstige geführt. In Spalte "2. Ursache" sind teils Fußgängerfehler (65, 69), teils Hindernisse auf der Fahrbahn (88, 89) und teils anderes (0, 49) aufgeführt. -> Einträge mit Fußgängerfehler zu Fußgänger, Rest als Sonst (die zwei 82er beide als Sonst, da Hindernis bzw. sonstiger Fehler)
+* 201er und 221er sind alles 02er, die Kennzeichen MS haben -> sind wohl alles PKW
+
+------------------------------------
 
 #
