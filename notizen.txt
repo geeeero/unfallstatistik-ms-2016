@@ -12,6 +12,9 @@ Verkehrsbeteiligungscodes, die nicht im Aufschlüsselungs-PDF auftauchen (wie of
 * Die insges. 9 82er und 89er werden in den Spalten "Art der Verkehrsbeteiligung" teils als Fußgänger, teils als Sonstige geführt. In Spalte "2. Ursache" sind teils Fußgängerfehler (65, 69), teils Hindernisse auf der Fahrbahn (88, 89) und teils anderes (0, 49) aufgeführt. -> Einträge mit Fußgängerfehler zu Fußgänger, Rest als Sonst (die zwei 82er beide als Sonst, da Hindernis bzw. sonstiger Fehler)
 * 201er und 221er sind alles 02er, die Kennzeichen MS haben -> sind wohl alles PKW
 
+Kat 1-3 Unfälle mit Personenschäden (1 tödl., 2 schwerste Personenschäden, 3 leichte Personenschäden), Kat 4-6 Sachschäden
+
 ------------------------------------
+
 
 #
