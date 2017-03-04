@@ -4,3 +4,12 @@
 .Ruserdata
 *~
 *.pdf
+*-concordance.tex
+*.log
+*.nav
+*.snm
+*.synctex.gz
+*.tex
+*.toc
+/cache/*
+/figure/*

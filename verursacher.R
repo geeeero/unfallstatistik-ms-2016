@@ -31,7 +31,9 @@ vums2016gnamed$Folgen <- factor(vums2016gnamed$Folgen, levels = c("T", "SV", "LV
 
 # Kreuztabelle Verursacher Unfälle
 # Zeile: 01, Spalte: 02
-table(vums2016g$X01g, vums2016g$X02g, useNA = "always")
+table(vums2016g$X01g, vums2016g$X02g, useNA = "ifany")
+#xtable(table(vums2016g$X02g, vums2016g$X01g, useNA = "ifany"))
+
 
 # Hauptverursacher (X01) nach Opfer (X02)
 allX01 <- ggplot(subset(vums2016g, !is.na(X02g)), aes(x = X01g)) + geom_bar() +
@@ -52,10 +54,20 @@ allX02
 #  scale_fill_brewer(palette = "Blues"))
 #prodplot(subset(vums2016g, !is.na(X02g)), ~ X02g + X01g, mosaic()) + fill
 
+verursacherFluct <- prodplot(subset(vums2016gnamed, !is.na(Zweitbeteiligter)),
+                             ~ Zweitbeteiligter + Hauptverursacher, flucts()) + 
+  aes(fill = Zweitbeteiligter) + scale_fill_brewer(palette = "Blues")
+verursacherFluct
+
 verursacherMosaic <- prodplot(subset(vums2016gnamed, !is.na(Zweitbeteiligter)),
                               ~ Zweitbeteiligter + Hauptverursacher, mosaic()) + 
   aes(fill = Zweitbeteiligter) + scale_fill_brewer(palette = "Blues")
 verursacherMosaic
+
+verursacherX01 <- prodplot(subset(vums2016gnamed, !is.na(Zweitbeteiligter)),
+                           ~ Hauptverursacher, mosaic(direction="h")) + 
+  aes(fill = Hauptverursacher) + scale_fill_manual(values = rep("white", 4))
+verursacherX01
 
 verursacherMosaic2 <- prodplot(subset(vums2016gnamed, !is.na(Zweitbeteiligter)),
                                ~ Hauptverursacher + Zweitbeteiligter, mosaic()) + 
@@ -125,7 +137,16 @@ KFZvsRadX01FolgenMosaic <- prodplot(KFZvsRad, ~ Folgen + Hauptverursacher, mosai
 KFZvsRadX01FolgenMosaic
 
 table(KFZvsRad$Folgen)
+
+# Ursachen
 table(KFZvsRad$X2..Ursache)
+table(KFZvsRad$Ursache)
+
+table(KFZvsRad$Typ, useNA = "ifany")
+table(KFZvsRad$Typ[KFZvsRad$Folgen %in% c("T", "SV", "LV")])
+table(KFZvsRad$Typ[KFZvsRad$Hauptverursacher == "KFZ"])
+
+sum(KFZvsRad$Folgen %in% c("T", "SV", "LV")) # 413 der 700 Unfälle KFZ vs Rad sind mit Verletzten / Toten
 
 
 # KFZ vs. Fuß

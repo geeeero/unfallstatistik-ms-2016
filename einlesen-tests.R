@@ -3,6 +3,8 @@ library(ggplot2)
 library(productplots)
 library(reshape2)
 library(gridExtra)
+library(knitr)
+library(xtable)
 
 # einlesen
 vums2016 <- read.csv("VU PP 2016-varnamen.csv", header = TRUE)
