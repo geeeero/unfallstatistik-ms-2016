@@ -1,0 +1,5 @@
+# Labels für Barplots
+
+https://stackoverflow.com/questions/32176462/r-ggplot-stacked-bar-label-spacing?rq=1
+
+https://stackoverflow.com/questions/7516861/rounding-labels-on-bar-chart-in-ggplot2
