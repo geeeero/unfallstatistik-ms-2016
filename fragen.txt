@@ -1,0 +1,20 @@
+# Fragen zur Unfallstatistik
+
+* "Kat.": wie werden Kat. 4-6 unterschieden?
+* "i.g.O"" / "a.g.O" ???
+* "Bet.": wie wird hier gezählt?
+TODO: alle Zeilen mit Bet. > 2 anschauen
+* "Helm": Eintragungen unklar 
+TODO: Eintragungen mit "/" nur bei Unfällen zwischen zwei Radfahrern?
+* Mofa / KKR / Krad: besser auf Codes in 01 / 02 gehen?
+TODO: sind die meisten der 923 mal 92 vs 21 unter den "sonstige" Unfallflucht?
+TODO: check sum(FG + RF + ... + sonstige) == Bet.
+* "Unfallbeteiligte 01" / "Unfallbeteiligte 02": Wie zuverlässig ist die Einsortierung in 01 und 02? Aufschlüsselung aktuell? Meine Vergröberung (X01g, X02g) ok?
+* "Alkohol bei": wird nicht konsequent ausgefüllt, besser "Ursache" nehmen?
+* Ursache 1-4 / etc.: welche Variable wie benutzt wird ist unklar, meine Vergröberung von 2. Ursache (Ursache) ok?
+* Wann und wie werden die Lichtverhältnisse und der Straßenzustand angegeben?
+* 02 = Alter in Jahren: meistens leer, in welchen Fällen wird dies eingetragen?
+* Bemerkungen: was heißt "RB dd.mm.yyyy"?
+* Text / IGVP-Nr.: sind das Aktenzeichen o.Ä.? Problematisch?
+
+#

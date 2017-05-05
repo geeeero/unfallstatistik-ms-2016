@@ -1,10 +1,107 @@
-# Notizen zur Unfallstatistik 2016
+# Notizen und Fragen zur Unfallstatistik 2016
+
+Dateien zur Interpretation der Unfallstatistik Münster 2016 (z.T. mit der "VU PP 2016.xlsx" von Elmar erhalten, z.T. selbst recherchiert)
+
+* "Anhang PP VU 2016  FreePDF File.pdf" (Art der Verkehrsbeteiligung, Unfallursachen)
+* "Unfalltypen20170223_19243232.pdf" (Unfalltypen (3-stellig), schlechter Scan)
+* "unfalltypen-katalog_udv_web_2.pdf" (Unfalltypen (3-stellig), pdf der Versicherungswirtschaft mit Erläuterungen)
+
+Notizen, Kommentare und Fragen zu einzelnen Variablen (Spalten) im Datensatz:
+
+## Lfd.Nr
+
+Warum ist die "laufende Nummer" immer "1"?
+
+
+## VU-Ort / VU-Höhe
+
+[Gerald, hast du Fragen?]
+
+
+## Tag, Datum
+
+Tag = Wochentag, Datum = dd.mm.yyyy
+(laut Gerald gibt es einzelne Konflikte zw. Wochentag und zugehörigem Datum)
+
+
+## Uhrzeit
+
+Format hh:mm
 
 Eintrag Kanalstraße, 258 (Zeile 3137 csv und xlsx) hat "0,5791666667" als Uhrzeit (sonst zb "10:50")
 
-------------------------------------
 
-Verkehrsbeteiligungscodes, die nicht im Aufschlüsselungs-PDF auftauchen (wie oft):
+## Kat
+
+Unfallkategorien:
+* Kat 1-3 Unfälle mit Personenschäden (1 tödl., 2 schwerste Personenschäden, 3 leichte Personenschäden)
+* Kat 4-6 Sachschäden
+(wie werden Kat. 4-6 unterschieden?)
+
+## Flucht
+
+ob Fahrerflucht begangen wurde
+
+
+## i.g.O / a.g.O
+
+Bedeutung unklar
+
+
+## Folgen T / SV / LV
+
+Unfallfolgen:
+* T:  Anzahl Tote
+* SV: Anzahl Schwerverletzte
+* LV: Anzahl Leichtverletzte
+* NA: nur Sachschaden
+
+
+## Bet.
+
+vermutlich Anzahl Beteiligte, sind das Personen / Fahrzeuge bzw. Verkehrsteilnehmer?
+(ein PKW mit 4 Personen besetzt vs ein PKW mit einer Person -> Bet. = 2 oder 5?)
+
+
+## Art der Verkehrsbeteiligung FG / RF / ... / sonstige
+
+Anzahl der Unfallbeteiligten aufgeschlüsselt nach Fahrzeugart / Fußgänger usw
+* FG: Fußgänger
+* RF: Radfahrer
+* Helm: neu in 2016 (?), Eintragungen unklar, s.u.
+* Mofa
+* KKR: Kleinkraftrad? Unterschied zu Mofa? Oder Roller?
+* Krad: Kraftrad, also Motorräder, Roller (ab 50ccm?), Quads (?)
+* PKW: hauptsächlich Code 21, aber auch 13 mal 71 vs 71 (also Rad vs Rad)
+* LKW
+* KOM: Kraft-Omnibus
+* sonstige: von 1173 mit sonstige != "" sind 923 Code 92 vs 21, also sonstige & unbekannte Fahrzeuge vs PKW
+
+Tabelle für "Helm":
+        F  F/j  F/n  F/P    j  j/j  j/n    n   n   n/F  n/j  n/n    P 
+9507   39    3    4    1  125    7    8  653    1    1    9   94   22 
+
+Helm != "" nur bei Beteiligung von 71, 72, 73, mit Ausnahme von 3 21 vs 21 und 1 21 vs 40
+Beziehen sich Eintragungen mit "/" auf Helm bei 01 / 02?
+Was heißt F, was heißt P?
+
+Mofa / KKR: KKR sollte 01 sein, Mofa 02. Es gibt einzelne andere Codes unter KKR >= 1 bzw. Mofa >= 1
+
+Krad: nur Codes 11 (Motorrad) und 12 (Roller ab 50ccm), außer 3 mal 21 vs 21
+
+-> besser die genaueren Angaben unter Unfallbeteiligte 01 / 02 vergröbern? Doch anschauen?
+   "Unpassende" Einträge könnten bei Unfällen mit mehr als zwei Beteiligten sein
+
+
+## Unfallbeteiligte 01 / 02 ("X01", "X02")
+
+Art der Verkehrsbeteiligung feiner aufgeschlüsselt.
+Die Polizei nimmt im Unfallaufnahmebogen denjenigen unter "01" auf, den sie für den Hauptverursacher hält, unter "02" das Opfer oder Zweitbeteiligten. Wie oft stellt sich diese erste Einschätzung der Beamten später als falsch heraus?
+
+Ist die Aufschlüsselung in "Anhang PP VU 2016  FreePDF File.pdf" (noch) aktuell?
+
+Verkehrsbeteiligungscodes, die darin nicht auftauchen (und wie oft):
+
 25 (60), 73 (5), 82 (2), 89 (7), 201 (1), 221 (5) 
 
 * 25er haben alle Kennzeichen -> wohl auch PKW-artig
@@ -12,9 +109,77 @@ Verkehrsbeteiligungscodes, die nicht im Aufschlüsselungs-PDF auftauchen (wie of
 * Die insges. 9 82er und 89er werden in den Spalten "Art der Verkehrsbeteiligung" teils als Fußgänger, teils als Sonstige geführt. In Spalte "2. Ursache" sind teils Fußgängerfehler (65, 69), teils Hindernisse auf der Fahrbahn (88, 89) und teils anderes (0, 49) aufgeführt. -> Einträge mit Fußgängerfehler zu Fußgänger, Rest als Sonst (die zwei 82er beide als Sonst, da Hindernis bzw. sonstiger Fehler)
 * 201er und 221er sind alles 02er, die Kennzeichen MS haben -> sind wohl alles PKW
 
-Kat 1-3 Unfälle mit Personenschäden (1 tödl., 2 schwerste Personenschäden, 3 leichte Personenschäden), Kat 4-6 Sachschäden
 
-------------------------------------
+## Kennzeichen 01 / 02
 
+Landkreis des Kennzeichens wenn 01 bzw 02 KFZ (MS, COE, WAF, etc.)
+
+
+## Alkohol bei
+
+Ob bei "01" oder "02" Alkoholeinfluss vorlag(?)
+In 2016 hier nur 8 mal 01 und 3 mal bei 02, scheint sehr wenig?
+Eigentlich redundant zu zweistelligem Unfallursachen-Code, dort steht 01 für Alkoholeinfluss, diesen nehmen?
+
+
+## Typ
+
+3-stelliger Unfalltyp-Code, siehe "unfalltypen-katalog_udv_web_2.pdf"
+
+
+## Ursache 1-4 / 2. Ursache / 3. Ursache / sonstige Ursache / Ursache 02
+
+Einträge in allen fünf Variablen entsprechen wohl dem zweistelligen Ursachencode aus "Anhang PP VU 2016  FreePDF File.pdf"
+
+Unklar, wann welche Spalte verwendet wird, meistens enthält nur 2. Ursache einen Eintrag (keine NAs für 2. Ursache), und von den 322 Zeilen in denen der Eintrag 0 ist (kein zulässige Code?), handelt es sich in 314 Fällen um einen Alleinunfall
+
+Tabelle für Ursache 1-4:
+         01    02    03    04   0,5  0,75    10  <NA>
+10330   105     8     7    20     2     1     1     0
+
+Tabelle für 3. Ursache:
+   9   10   11   13   14   15   17   18   ...  71   72   73   74   75   78   81   82   87   89 <NA>   
+   2    6    5    5  209    1    1    1   ...   2   22   25   13    1    2    4   12    2    2 9913 
+
+Tabelle für sonstige Ursache:
+   13    49    51    72    73    75    81    82    84    86    87    88    89  <NA> 
+    1     3     1     1     1     1     1     2     1   310     8     1     2 10141 
+
+Tabelle für Ursache 02:
+          1    11    13    14    26    27    31    35    37 60/64     9  <NA> 
+10457     1     2     1     2     1     1     3     2     1     1     2     0 
+
+meine Vergröberung ("Ursache") ok?
+
+
+## Lichtverhältnisse / Strassenzustand
+
+Wann und wie werden die Lichtverhältnisse und der Straßenzustand angegeben?
+
+Tabelle Lichtverhältnisse:
+        0    1  1/2  1/3    2  2/1  2/3  2&3    3 <NA> 
+8295    1  414    2   76  885    1  797    1    2    0 
+
+Tabelle Straßenzustand:
+        0    1  1/2  1/3  1/5    2   27    3   38    5 <NA> 
+8106    1 2261    6    1   14   65    1    2    1   16    0 
+
+
+## 01 = Alter in Jahren / 02 = Alter in Jahren
+
+Alter in Jahren der Beteiligten 01 und 02
+
+Alter 01 liegt meistens vor, Ausnahmen 34 mal "", 65 mal "?", 1 mal "? ", 1358 mal "F" (fehlt?)
+Alter 02 liegt in 9359 von 10474 Fällen nicht vor, in nur welchen Fällen wird dies eingetragen?
+
+
+## Bemerkungen
+
+selten ausgefüllt, enthält dann oft Promille-Anzahl oder "Stadt", manchmal "RB dd.mm.yyyy", was heißt das?
+
+
+## Text / IGVP-Nr.
+
+3683 von 10474 Zeilen enthalten Einträge, möglicherweise Aktenzeichen? Womöglich sensitive Information?
 
 #
