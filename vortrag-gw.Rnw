@@ -290,6 +290,10 @@ kfzvsfus2 <- ggplot(KFZvsFus, aes(x = Hauptverursacher, fill = Folgen)) +
   ylab("Anzahl Unfälle")
 kfzvsfus2
 kfzvsfustab <- round(100*prop.table(table(KFZvsFus$Hauptverursacher)), 0)
+kfzvsfus3 <- ggplot(KFZvsFus, aes(x = Hauptverursacher, fill = Folgen)) +
+  geom_bar(position = "dodge") + scale_fill_brewer(palette = "YlOrRd", direction = -1) +
+  ylab("Anzahl Unfälle")
+kfzvsfus3
 @
 \begin{tikzpicture}
 \uncover<1>{\node {\includegraphics[height=0.9\textheight]{figure/kfzvsfus-1}};
@@ -339,6 +343,10 @@ kfzvsfustyp3 <- ggplot(KFZvsFusnurTSVLV, aes(x = Typg, fill = Hauptverursacher))
   geom_bar(position = "stack") + scale_fill_brewer(palette = "YlOrRd", direction = -1) +
   xlab("") + ylab("Anzahl Unfälle") + coord_flip(ylim = c(0, 55))
 kfzvsfustyp3
+kfzvsfustyp4 <- ggplot(KFZvsFusnurTSVLV, aes(x = Typg, fill = Hauptverursacher)) +
+  geom_bar(position = "stack") + scale_fill_manual(values = rep("light blue", 2)) +
+  xlab("") + ylab("Anzahl Unfälle") + coord_flip(ylim = c(0, 55))
+kfzvsfustyp4
 @
 \begin{tikzpicture}
 \uncover<1>{\node {\includegraphics[height=0.9\textheight]{figure/kfzvsfustyp-1}};
